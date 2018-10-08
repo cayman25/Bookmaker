@@ -29,6 +29,11 @@ public class DateValidation {
 		Date currentDate = new Date();
 		return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(currentDate);
 	}
+
+	public static String getCurrentTime() {
+		Date currentDate = new Date();
+		return new SimpleDateFormat("HH:mm:ss").format(currentDate);
+	}
 	
 	public static String getTodayWithAddOrSubstract(int addOrSubstractNumerOfDay) {
 		Date currentDate = new Date();

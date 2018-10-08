@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "competition",
     "matches"
 })
-public class MatchesExternApi {
+public class MatchesExternalApi {
 
     @JsonProperty("count")
     private Integer count;
@@ -43,7 +43,7 @@ public class MatchesExternApi {
 
     @Override
 	public String toString() {
-		return "MatchesExternApi [count=" + count + ", filters=" + filters + ", competition=" + competition
+		return "MatchesExternalApi [count=" + count + ", filters=" + filters + ", competition=" + competition
 				+ ", matches=" + matches + ", additionalProperties=" + additionalProperties + "]";
 	}
 

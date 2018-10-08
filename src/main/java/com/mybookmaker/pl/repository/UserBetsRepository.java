@@ -10,8 +10,9 @@ import org.springframework.data.jpa.repository.Query;
 import com.mybookmaker.pl.model.entity.UserBets;
 import com.mybookmaker.pl.model.dto.UserBetsDTO;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
-@Transactional
+@Repository
 public interface UserBetsRepository extends JpaRepository<UserBets, Integer>{
 
 	@Query("Select new com.mybookmaker.pl.model.dto.UserBetsDTO"
@@ -28,4 +29,11 @@ public interface UserBetsRepository extends JpaRepository<UserBets, Integer>{
 			+ "AND "
 			+ "ub.matchID.matchID = :matchID")
 	Integer checkIfThisBetIsExist(@Param("userID") int userID, @Param("matchID")int matchID);
+
+	@Query("Select ub "
+			+ "from UserBets ub "
+			+ "where "
+			+ "ub.matchID.matchID = :matchID")
+	List<UserBets> getListOfMatchByMatchID (int matchID);
+
 }

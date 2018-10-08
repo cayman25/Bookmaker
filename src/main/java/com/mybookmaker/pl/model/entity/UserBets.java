@@ -25,22 +25,25 @@ public class UserBets {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int betID;
-
 	private int userID;
-	
 	@JoinColumn(name="matchID")
 	@NotFound(action = NotFoundAction.IGNORE)
 	@ManyToOne(cascade = CascadeType.MERGE)
 	private Game matchID;
-	
 	@Enumerated(EnumType.STRING)
 	@Column(length=9)
 	private TypeBet userBet;
 	private String dateOfBet;
-
 	@Enumerated(EnumType.STRING)
 	private TypeScore scoreBet;
-	
+
+	@Override
+	public String toString() {
+		return "UserBets{" +
+				"scoreBet=" + scoreBet +
+				'}';
+	}
+
 	public UserBets() {
 	}
 	public int getBetId() {

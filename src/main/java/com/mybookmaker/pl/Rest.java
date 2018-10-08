@@ -1,5 +1,6 @@
 package com.mybookmaker.pl;
 
+import com.mybookmaker.pl.model.externalApi.MatchesExternalApi;
 import org.springframework.expression.ParseException;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -8,36 +9,26 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mybookmaker.pl.model.externalApi.MatchesExternApi;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Rest {
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args){
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("X-Auth-Token","bf5c0f84e2214a43978af5da8e98d878");
-        HttpEntity<String> entity = new HttpEntity<>("paramters",headers);
+            Map<Integer, String> listOfAvailableLeagues = new HashMap<Integer, String>();
+            listOfAvailableLeagues.put(2021, "England: Premier League");
+            listOfAvailableLeagues.put(2016, "England: Championship");
+            listOfAvailableLeagues.put(2015, "France: Ligue 1");
+            listOfAvailableLeagues.put(2002, "Germany: Bundesliga");
+            listOfAvailableLeagues.put(2019, "Italy: Serie A");
+            listOfAvailableLeagues.put(2014, "Spain: Primera Division");
+            listOfAvailableLeagues.put(2001, "Europe: UEFA Champions League");
 
-        RestTemplate restTemplate = new RestTemplate();
-
-        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
-        converter.setObjectMapper(new ObjectMapper());
-        restTemplate.getMessageConverters().add(converter);
-
-        ResponseEntity<MatchesExternApi> list = restTemplate.exchange(
-                "http://api.football-data.org/v2/competitions/2016/matches?dateFrom=2018-09-02&dateTo=2018-09-15",
-                HttpMethod.GET,
-                entity,
-                MatchesExternApi.class);
-
-        System.out.println(list.toString());
-        System.out.println(list.getBody().getMatches().get(0).getAwayTeam().getName());
-
-
-
+            for(int i : listOfAvailableLeagues.keySet()){
+                System.out.println(i);
+            }
     }
 }

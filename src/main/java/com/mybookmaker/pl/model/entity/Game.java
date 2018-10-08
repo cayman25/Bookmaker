@@ -42,6 +42,7 @@ public class Game {
 	@OneToMany(cascade=CascadeType.MERGE,
 				mappedBy = "matchID")	
 	private List<UserBets> listBets = new ArrayList<UserBets>();
+	private boolean verifiedStatus;
 	
 	public Game() {
 	}
@@ -110,8 +111,32 @@ public class Game {
 		this.winner = winner;
 	}
 
+	public int getMatchID() {
+		return matchID;
+	}
+
+	public void setMatchID(int matchID) {
+		this.matchID = matchID;
+	}
+
+	public List<UserBets> getListBets() {
+		return listBets;
+	}
+
+	public void setListBets(List<UserBets> listBets) {
+		this.listBets = listBets;
+	}
+
+	public boolean isVerifiedStatus() {
+		return verifiedStatus;
+	}
+
+	public void setVerifiedStatus(boolean verifiedStatus) {
+		this.verifiedStatus = verifiedStatus;
+	}
+
 	public Game(int matchId, Competition competition, String dateMatch, String startTime, String statusMatch,
-			Team homeTeam, Team awayTeam, String winner) {
+				Team homeTeam, Team awayTeam, String winner) {
 		this.matchID = matchId;
 		this.competition = competition;
 		this.dateMatch = dateMatch;
