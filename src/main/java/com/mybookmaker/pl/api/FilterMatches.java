@@ -19,7 +19,7 @@ public class FilterMatches {
                 matchesExternalApi.getCompetition().getId(),
                 matchesExternalApi.getCompetition().getName());
         List<Game> games = createGameEntity(matchesFiltered, competition);
-        games.forEach(game -> game.setVerifiedStatus(true));
+        games.forEach(game -> game.setVerifiedStatus(false));
         return games;
     }
 

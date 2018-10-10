@@ -27,8 +27,8 @@ public class GettingObjectsFromApi {
 
     private String createUrlToGetJson(int leagueId, int dateTo) {
         String url = "http://api.football-data.org/v2/competitions/" + leagueId + "/matches?" +
-                "dateFrom="	+ DateValidation.getTodayWithAddOrSubstract(-3) + //0 means days to today
-                "&dateTo=" + DateValidation.getTodayWithAddOrSubstract(14);
+                "dateFrom="	+ DateValidation.getTodayWithAddOrSubstract(-4) + //0 means days to today
+                "&dateTo=" + DateValidation.getTodayWithAddOrSubstract(10);
         return url;
     }
 

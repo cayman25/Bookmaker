@@ -1,10 +1,14 @@
 package com.mybookmaker.pl.repository;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 
+import org.apache.catalina.User;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 
 import com.mybookmaker.pl.model.entity.UserBets;
@@ -13,7 +17,13 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserBetsRepository extends JpaRepository<UserBets, Integer>{
+public interface UserBetsRepository extends JpaRepository<UserBets, Integer>, JpaSpecificationExecutor<UserBets> {
+
+	@Override
+	@Query("Select ub "
+			+ "from UserBets ub "
+			+ "inner join fetch ub.matchID")
+	List<UserBets> findAll();
 
 	@Query("Select new com.mybookmaker.pl.model.dto.UserBetsDTO"
 			+ "(ub.userID, ub.matchID.matchID, ub.matchID.homeTeam.teamName, ub.matchID.awayTeam.teamName, ub.userBet, ub.dateOfBet) "
@@ -30,10 +40,5 @@ public interface UserBetsRepository extends JpaRepository<UserBets, Integer>{
 			+ "ub.matchID.matchID = :matchID")
 	Integer checkIfThisBetIsExist(@Param("userID") int userID, @Param("matchID")int matchID);
 
-	@Query("Select ub "
-			+ "from UserBets ub "
-			+ "where "
-			+ "ub.matchID.matchID = :matchID")
-	List<UserBets> getListOfMatchByMatchID (int matchID);
-
+	Set<UserBets> findByMatchID_MatchID(int match);
 }

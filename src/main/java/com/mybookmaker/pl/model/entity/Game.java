@@ -2,46 +2,36 @@ package com.mybookmaker.pl.model.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
+import org.hibernate.annotations.Proxy;
 
 @Entity
 @Table
+@Proxy(lazy = true)
 public class Game {
 
 	@Id
 	private int matchID;
 
 	@JoinColumn(name = "Competition")
-	@NotFound(action = NotFoundAction.IGNORE)
-	@ManyToOne(cascade=CascadeType.MERGE,
-				fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 	private Competition competition;
 	private String dateMatch;
 	private String startTime;
 	private String statusMatch;
-	@NotFound(action = NotFoundAction.IGNORE)
-	@ManyToOne(cascade=CascadeType.MERGE,
-				fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 	private Team homeTeam;
-	@NotFound(action = NotFoundAction.IGNORE)
-	@ManyToOne(cascade=CascadeType.MERGE,
-				fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 	private Team awayTeam;
 	private String winner;
-	@OneToMany(cascade=CascadeType.MERGE,
-				mappedBy = "matchID")	
-	private List<UserBets> listBets = new ArrayList<UserBets>();
+	@OneToMany(mappedBy = "matchID")
+	private Set<UserBets> listBets;
+	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private boolean verifiedStatus;
 	
 	public Game() {
@@ -119,11 +109,11 @@ public class Game {
 		this.matchID = matchID;
 	}
 
-	public List<UserBets> getListBets() {
+	public Set<UserBets> getListBets() {
 		return listBets;
 	}
 
-	public void setListBets(List<UserBets> listBets) {
+	public void setListBets(Set<UserBets> listBets) {
 		this.listBets = listBets;
 	}
 

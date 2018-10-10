@@ -1,7 +1,10 @@
 package com.mybookmaker.pl.controller;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
 
+import com.mybookmaker.pl.api.DateValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +22,12 @@ public class UserBetsRestController {
 	@PostMapping(value="/matches")
 	public void saveOneUserBet(
 								@RequestBody List<UserBets> bets) {
+/*			bets.forEach(bet ->{
+				if(bet.getMatchID().getDateMatch().equals(DateValidation.getToday()) & bet.getMatchID().getStartTime()){
+
+
+				}
+			});*/
 		userBetsServices.saveListOfUserBets(bets);
 	}
 	

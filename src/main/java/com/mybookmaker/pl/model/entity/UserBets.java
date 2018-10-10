@@ -1,17 +1,9 @@
 package com.mybookmaker.pl.model.entity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -26,23 +18,16 @@ public class UserBets {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int betID;
 	private int userID;
+	//@Fetch(FetchMode.JOIN)
 	@JoinColumn(name="matchID")
-	@NotFound(action = NotFoundAction.IGNORE)
-	@ManyToOne(cascade = CascadeType.MERGE)
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Game matchID;
 	@Enumerated(EnumType.STRING)
 	@Column(length=9)
 	private TypeBet userBet;
-	private String dateOfBet;
+	private Date dateOfBet;
 	@Enumerated(EnumType.STRING)
 	private TypeScore scoreBet;
-
-	@Override
-	public String toString() {
-		return "UserBets{" +
-				"scoreBet=" + scoreBet +
-				'}';
-	}
 
 	public UserBets() {
 	}
@@ -81,13 +66,6 @@ public class UserBets {
 	}
 	public void setScore(TypeScore score) {
 		this.scoreBet = score;
-	}
-	public UserBets(int betId, int userId, Game matchID, TypeBet userBet, String dateOfBet) {
-		this.betID = betId;
-		this.userID = userId;
-		this.matchID = matchID;
-		this.userBet = userBet;
-		this.dateOfBet = dateOfBet;
 	}
 
 	public UserBets(int betId, int userId, Game matchID, TypeBet userBet, String dateOfBet, TypeScore score) {

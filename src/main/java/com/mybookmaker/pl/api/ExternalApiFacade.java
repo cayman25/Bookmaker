@@ -17,11 +17,11 @@ public class ExternalApiFacade {
         Map<Integer, String> listOfAvailableLeagues = new HashMap<Integer, String>();
         listOfAvailableLeagues.put(2021, "England: Premier League");
         listOfAvailableLeagues.put(2016, "England: Championship");
-      //  listOfAvailableLeagues.put(2015, "France: Ligue 1");
-      //  listOfAvailableLeagues.put(2002, "Germany: Bundesliga");
-     //   listOfAvailableLeagues.put(2019, "Italy: Serie A");
-     //   listOfAvailableLeagues.put(2014, "Spain: Primera Division");
-       // listOfAvailableLeagues.put(2001, "Europe: UEFA Champions League");
+        listOfAvailableLeagues.put(2015, "France: Ligue 1");
+        listOfAvailableLeagues.put(2002, "Germany: Bundesliga");
+        listOfAvailableLeagues.put(2019, "Italy: Serie A");
+        listOfAvailableLeagues.put(2014, "Spain: Primera Division");
+        listOfAvailableLeagues.put(2001, "Europe: UEFA Champions League");
         return listOfAvailableLeagues;
     }
 

@@ -1,13 +1,11 @@
 package com.mybookmaker.pl.model.entity;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
@@ -17,9 +15,8 @@ public class Competition {
 	private int competitionID;
 	private String competitionName;
 	
-	@OneToMany(mappedBy = "competition",
-			   cascade= {CascadeType.MERGE})
-	private List <Game> games = new ArrayList<Game>();
+	@OneToMany(mappedBy = "competition")
+	private Set<Game> games = new HashSet<>();
 	
 	
 	public Competition() {
@@ -46,11 +43,11 @@ public class Competition {
 		this.competitionName = competitionName;
 	}
 
-	public List<Game> getGames() {
+	public Set<Game> getGames() {
 		return games;
 	}
 	
-	public void setGames(List<Game> games) {
+	public void setGames(Set<Game> games) {
 		this.games = games;
 	}
 

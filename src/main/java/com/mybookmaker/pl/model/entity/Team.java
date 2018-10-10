@@ -14,7 +14,8 @@ public class Team {
 	@Id
 	private int teamId;
 	private String teamName;
-		
+
+
 	public Team() {
 	}
 	
