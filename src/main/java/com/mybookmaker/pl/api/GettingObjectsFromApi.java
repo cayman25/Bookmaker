@@ -27,7 +27,7 @@ public class GettingObjectsFromApi {
 
     private String createUrlToGetJson(int leagueId, int dateTo) {
         String url = "http://api.football-data.org/v2/competitions/" + leagueId + "/matches?" +
-                "dateFrom="	+ DateValidation.getTodayWithAddOrSubstract(-4) + //0 means days to today
+                "dateFrom="	+ DateValidation.getTodayWithAddOrSubstract(-2) + //0 means days to today
                 "&dateTo=" + DateValidation.getTodayWithAddOrSubstract(10);
         return url;
     }
@@ -35,7 +35,7 @@ public class GettingObjectsFromApi {
     public  MatchesExternalApi createMatchesExternalApi(int leagueId) {
             String url = createUrlToGetJson(leagueId,0);
             HttpHeaders headers = new HttpHeaders();
-            headers.set("X-Auth-Token", "bf5c0f84e2214a43978af5da8e98d878");
+            headers.set("X-Auth-Token", apiAuthToken);
             HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
             RestTemplate restTemplate = new RestTemplate();
             MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();

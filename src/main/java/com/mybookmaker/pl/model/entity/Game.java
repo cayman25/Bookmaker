@@ -12,7 +12,6 @@ import org.hibernate.annotations.Proxy;
 
 @Entity
 @Table
-@Proxy(lazy = true)
 public class Game {
 
 	@Id
@@ -37,12 +36,36 @@ public class Game {
 	public Game() {
 	}
 
-	public int getMatchId() {
+	public Game(int matchID, Competition competition, String dateMatch, String startTime, String statusMatch, Team homeTeam, Team awayTeam, String winner, Set<UserBets> listBets, boolean verifiedStatus) {
+		this.matchID = matchID;
+		this.competition = competition;
+		this.dateMatch = dateMatch;
+		this.startTime = startTime;
+		this.statusMatch = statusMatch;
+		this.homeTeam = homeTeam;
+		this.awayTeam = awayTeam;
+		this.winner = winner;
+		this.listBets = listBets;
+		this.verifiedStatus = verifiedStatus;
+	}
+
+	public Game(int matchID, Competition competition, String dateMatch, String startTime, String statusMatch, Team homeTeam, Team awayTeam, String winner) {
+		this.matchID = matchID;
+		this.competition = competition;
+		this.dateMatch = dateMatch;
+		this.startTime = startTime;
+		this.statusMatch = statusMatch;
+		this.homeTeam = homeTeam;
+		this.awayTeam = awayTeam;
+		this.winner = winner;
+	}
+
+	public int getMatchID() {
 		return matchID;
 	}
 
-	public void setMatchId(int matchId) {
-		this.matchID = matchId;
+	public void setMatchID(int matchID) {
+		this.matchID = matchID;
 	}
 
 	public Competition getCompetition() {
@@ -68,7 +91,7 @@ public class Game {
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
 	}
-	
+
 	public String getStatusMatch() {
 		return statusMatch;
 	}
@@ -101,14 +124,6 @@ public class Game {
 		this.winner = winner;
 	}
 
-	public int getMatchID() {
-		return matchID;
-	}
-
-	public void setMatchID(int matchID) {
-		this.matchID = matchID;
-	}
-
 	public Set<UserBets> getListBets() {
 		return listBets;
 	}
@@ -123,17 +138,5 @@ public class Game {
 
 	public void setVerifiedStatus(boolean verifiedStatus) {
 		this.verifiedStatus = verifiedStatus;
-	}
-
-	public Game(int matchId, Competition competition, String dateMatch, String startTime, String statusMatch,
-				Team homeTeam, Team awayTeam, String winner) {
-		this.matchID = matchId;
-		this.competition = competition;
-		this.dateMatch = dateMatch;
-		this.startTime = startTime;
-		this.statusMatch = statusMatch;
-		this.homeTeam = homeTeam;
-		this.awayTeam = awayTeam;
-		this.winner = winner;
 	}
 }

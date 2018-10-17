@@ -20,7 +20,6 @@ import java.util.Properties;
 @Configuration
 public class DBConfig {
 
-
     @Value("${jdbc.driverClassName}")
     private String driverClass;
     @Value("${jdbc.url}")
@@ -35,7 +34,6 @@ public class DBConfig {
         LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactory.setDataSource(dataSource());
         entityManagerFactory.setPackagesToScan(new String[] { "com.mybookmaker.pl.model.entity" });
-
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         entityManagerFactory.setJpaVendorAdapter(vendorAdapter);
         entityManagerFactory.setJpaProperties(additionalProperties());

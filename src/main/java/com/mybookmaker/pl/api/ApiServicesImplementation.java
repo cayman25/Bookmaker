@@ -15,7 +15,7 @@ public class ApiServicesImplementation implements ApiServices{
     private GameRepository gameRepository;
 
     @Override
-  // @Scheduled(cron = "* */4 * * * *") //getting all information about match from today to next 7 days
+    //@Scheduled(cron = "* 51 10 * * *") //getting all information about match from today to next 7 days
     public void updateFinishedGames() {
         System.out.println("wszystkie mecze");
         ExternalApiFacade facade = new ExternalApiFacade();

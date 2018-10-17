@@ -16,9 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class GamesRestController {
 
+	private final GameServices gameServices;
+
 	@Autowired
-	GameServices gameServices; 
-	
+	public GamesRestController(GameServices gameServices){
+		this.gameServices=gameServices;
+	}
 	@GetMapping(value="/matches")
 	public List<GameDto> getAllMatchesToday(){
 		

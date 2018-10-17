@@ -1,3 +1,4 @@
+/*
 package com.mybookmaker.pl.config;
 
 import org.springframework.context.annotation.Bean;
@@ -40,3 +41,4 @@ public class DemoAppConfig implements WebMvcConfigurer{
 
 }
 
+*/

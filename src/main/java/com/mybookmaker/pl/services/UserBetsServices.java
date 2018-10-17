@@ -13,14 +13,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserBetsServices {
 	
-	@Autowired
 	UserBetsRepository userBetsRepository;
-	
+
+	@Autowired
+	public UserBetsServices(UserBetsRepository userRepo){
+		this.userBetsRepository=userRepo;
+	}
+
 	public void saveListOfUserBets (List<UserBets> bets) {
 		
 		bets.forEach(betList -> betList.setDateOfBet(DateValidation.getTodayWithTime()));
 		bets.forEach(oneBet -> {
-				int matchId = oneBet.getMatchID().getMatchId();
+				int matchId = oneBet.getMatchID().getMatchID();
 				int userId = oneBet.getUserId();
 				Integer betId = userBetsRepository.checkIfThisBetIsExist(userId, matchId);
 				

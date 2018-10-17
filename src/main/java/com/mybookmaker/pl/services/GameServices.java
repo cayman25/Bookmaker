@@ -12,8 +12,12 @@ import com.mybookmaker.pl.repository.GameRepository;
 @Service
 public class GameServices {
 
+	private final GameRepository gameRepository;
+
 	@Autowired
-	GameRepository gameRepository;
+	public GameServices(GameRepository gameRepo){
+		this.gameRepository = gameRepo;
+	}
 	
 	public List<GameDto> getMatchesFromToday(){
 		return gameRepository.getMatchesByDate(DateValidation.getToday());

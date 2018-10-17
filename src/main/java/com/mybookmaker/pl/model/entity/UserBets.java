@@ -25,7 +25,7 @@ public class UserBets {
 	@Enumerated(EnumType.STRING)
 	@Column(length=9)
 	private TypeBet userBet;
-	private Date dateOfBet;
+	private String dateOfBet;
 	@Enumerated(EnumType.STRING)
 	private TypeScore scoreBet;
 

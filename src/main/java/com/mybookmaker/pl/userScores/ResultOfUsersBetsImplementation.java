@@ -14,14 +14,18 @@ import java.util.Set;
 
 @Service
 public class ResultOfUsersBetsImplementation implements ResultOfUsersBets{
-    @Autowired
-    UserBetsRepository userBetsRepository;
+
+    private final UserBetsRepository userBetsRepository;
+    private final GameRepository gameRepository;
 
     @Autowired
-    GameRepository gameRepository;
+    public ResultOfUsersBetsImplementation(GameRepository gameRepo, UserBetsRepository userRepo){
+        this.gameRepository=gameRepo;
+        this.userBetsRepository=userRepo;
+    }
 
     @Override
-    @Scheduled(cron = "*/30 * * * * *")
+   // @Scheduled(cron = "*/30 * * * * *")
     public void setUsersBetsResult() {
         List<Game> notVerifiedGames = gameRepository.getFinishedAndNotVeryfiedGame();
         notVerifiedGames.forEach(game -> {

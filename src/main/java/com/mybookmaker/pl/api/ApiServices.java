@@ -4,9 +4,6 @@ import java.util.Map;
 
 public interface ApiServices {
 
-
     public void updateFinishedGames ();
-
     public void insertGames();
-
 }

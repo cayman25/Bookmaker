@@ -16,9 +16,12 @@ import com.mybookmaker.pl.services.UserBetsServices;
 @RequestMapping("/api/user")
 public class UserBetsRestController {
 	
-	@Autowired 
-	UserBetsServices userBetsServices;
-	
+	private final UserBetsServices userBetsServices;
+
+	@Autowired
+	public UserBetsRestController (UserBetsServices userBetsServices){
+		this.userBetsServices=userBetsServices;
+	}
 	@PostMapping(value="/matches")
 	public void saveOneUserBet(
 								@RequestBody List<UserBets> bets) {
