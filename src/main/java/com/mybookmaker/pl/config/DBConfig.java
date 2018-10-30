@@ -1,3 +1,4 @@
+/*
 package com.mybookmaker.pl.config;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -71,3 +72,4 @@ public class DBConfig {
     }
 
 }
+*/

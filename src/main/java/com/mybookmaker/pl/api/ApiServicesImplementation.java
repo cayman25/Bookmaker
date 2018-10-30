@@ -11,26 +11,30 @@ import java.util.List;
 @Service
 public class ApiServicesImplementation implements ApiServices{
 
+
+    private final GameRepository gameRepository;
+
     @Autowired
-    private GameRepository gameRepository;
+    public ApiServicesImplementation(GameRepository gameRepository){
+        this.gameRepository=gameRepository;
+    }
 
     @Override
-    //@Scheduled(cron = "* 51 10 * * *") //getting all information about match from today to next 7 days
+    @Scheduled(cron = "0 */3 * * * *")//getting all information about match from today to next 7 days
     public void updateFinishedGames() {
-        System.out.println("wszystkie mecze");
+        System.out.println("Getting only finished");
         ExternalApiFacade facade = new ExternalApiFacade();
         List<Game> list  = facade.getOnlyFinishedGames();
         gameRepository.saveAll(list);
     }
 
     @Override
-   // @Scheduled(cron = "0 */3 * * * *")
+    @Scheduled(cron = "0 0 */1 * * *")
     public void insertGames() {
-        System.out.println("insert All");
+        System.out.println("Insert ALL games");
         ExternalApiFacade facade = new ExternalApiFacade();
         List <Game> games = facade.getOtherGames();
         gameRepository.saveAll(games);
     }
-
 
 }

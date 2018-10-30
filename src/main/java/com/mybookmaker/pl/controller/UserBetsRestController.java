@@ -22,6 +22,7 @@ public class UserBetsRestController {
 	public UserBetsRestController (UserBetsServices userBetsServices){
 		this.userBetsServices=userBetsServices;
 	}
+
 	@PostMapping(value="/matches")
 	public void saveOneUserBet(
 								@RequestBody List<UserBets> bets) {

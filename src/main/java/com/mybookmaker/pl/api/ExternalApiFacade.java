@@ -16,9 +16,9 @@ public class ExternalApiFacade {
     private Map<Integer, String> createLeagueObjects() {
         Map<Integer, String> listOfAvailableLeagues = new HashMap<Integer, String>();
         listOfAvailableLeagues.put(2021, "England: Premier League");
-        listOfAvailableLeagues.put(2016, "England: Championship");
+       /* listOfAvailableLeagues.put(2016, "England: Championship");
         listOfAvailableLeagues.put(2015, "France: Ligue 1");
-/*        listOfAvailableLeagues.put(2002, "Germany: Bundesliga");
+        listOfAvailableLeagues.put(2002, "Germany: Bundesliga");
         listOfAvailableLeagues.put(2019, "Italy: Serie A");
         listOfAvailableLeagues.put(2014, "Spain: Primera Division");
         listOfAvailableLeagues.put(2001, "Europe: UEFA Champions League");*/
@@ -28,28 +28,28 @@ public class ExternalApiFacade {
 
     public List<Game> getOnlyFinishedGames() {
         Map<Integer, String> listOfLeagues = createLeagueObjects();
-        List<Game> list = new ArrayList<>();
+        List<Game> listOfFinishedGames = new ArrayList<>();
 
-       for (int abc : listOfLeagues.keySet()) {
+       for (int key : listOfLeagues.keySet()) {
            GettingObjectsFromApi gettingObjectsFromApi = new GettingObjectsFromApi();
-           MatchesExternalApi matches = gettingObjectsFromApi.createMatchesExternalApi(abc);
-           list.addAll(filter.getOnlyFinishedMatches(matches));
-           System.out.println(abc);
+           MatchesExternalApi matches = gettingObjectsFromApi.createMatchesExternalApi(key);
+           listOfFinishedGames.addAll(filter.getOnlyFinishedMatches(matches));
+           System.out.println("Get Finished Game from competition ID: " + key);
        }
-            return list;
+            return listOfFinishedGames;
     }
 
         public List<Game> getOtherGames() {
             Map<Integer, String> listOfLeagues = createLeagueObjects();
-            List<Game> list = new ArrayList<>();
+            List<Game> listOfAllGames = new ArrayList<>();
 
-            for (int abc : listOfLeagues.keySet()) {
+            for (int key : listOfLeagues.keySet()) {
                 GettingObjectsFromApi gettingObjectsFromApi = new GettingObjectsFromApi();
-                MatchesExternalApi matches = gettingObjectsFromApi.createMatchesExternalApi(abc);
-                list.addAll(filter.getScheduledAndOtherMatches(matches));
-                System.out.println(abc);
+                MatchesExternalApi matches = gettingObjectsFromApi.createMatchesExternalApi(key);
+                listOfAllGames.addAll(filter.getScheduledAndOtherMatches(matches));
+                System.out.println("Get ALL Game from competition ID: " + key);
             }
-            return list;
+            return listOfAllGames;
         }
     }
 

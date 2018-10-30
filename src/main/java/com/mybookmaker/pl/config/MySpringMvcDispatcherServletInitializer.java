@@ -1,3 +1,4 @@
+/*
 package com.mybookmaker.pl.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -12,8 +13,10 @@ public class MySpringMvcDispatcherServletInitializer extends AbstractAnnotationC
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
+*/
 /*
-        return new Class[] {DemoAppConfig.class};*/
+        return new Class[] {DemoAppConfig.class};*//*
+
     return null;
     }
 
@@ -24,3 +27,4 @@ public class MySpringMvcDispatcherServletInitializer extends AbstractAnnotationC
 
 }
 
+*/

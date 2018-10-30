@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserBetsServices {
 	
-	UserBetsRepository userBetsRepository;
+	private final UserBetsRepository userBetsRepository;
 
 	@Autowired
 	public UserBetsServices(UserBetsRepository userRepo){
