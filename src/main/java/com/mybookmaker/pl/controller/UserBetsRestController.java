@@ -1,16 +1,12 @@
 package com.mybookmaker.pl.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.List;
-
-import com.mybookmaker.pl.api.DateValidation;
+import com.mybookmaker.pl.model.dto.UserBetsDTO;
+import com.mybookmaker.pl.model.entity.UserBets;
+import com.mybookmaker.pl.services.UserBetsServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.mybookmaker.pl.model.entity.UserBets;
-import com.mybookmaker.pl.model.dto.UserBetsDTO;
-import com.mybookmaker.pl.services.UserBetsServices;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/user")

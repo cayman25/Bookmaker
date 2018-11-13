@@ -1,14 +1,9 @@
 package com.mybookmaker.pl.model.entity;
 
-import javax.persistence.*;
-
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
-
-import com.mybookmaker.pl.model.enums.TypeScore;
 import com.mybookmaker.pl.model.enums.TypeBet;
+import com.mybookmaker.pl.model.enums.TypeScore;
+
+import javax.persistence.*;
 
 @Entity
 @Table

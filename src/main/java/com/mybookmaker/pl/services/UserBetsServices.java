@@ -1,14 +1,13 @@
 package com.mybookmaker.pl.services;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.mybookmaker.pl.api.DateValidation;
-import com.mybookmaker.pl.model.entity.UserBets;
+import com.mybookmaker.pl.converters.DateParser;
 import com.mybookmaker.pl.model.dto.UserBetsDTO;
+import com.mybookmaker.pl.model.entity.UserBets;
 import com.mybookmaker.pl.repository.UserBetsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserBetsServices {
@@ -22,7 +21,7 @@ public class UserBetsServices {
 
 	public void saveListOfUserBets (List<UserBets> bets) {
 		
-		bets.forEach(betList -> betList.setDateOfBet(DateValidation.getTodayWithTime()));
+		bets.forEach(betList -> betList.setDateOfBet(DateParser.getTodayWithTime()));
 		bets.forEach(oneBet -> {
 				int matchId = oneBet.getMatchID().getMatchID();
 				int userId = oneBet.getUserId();

@@ -1,10 +1,8 @@
 package com.mybookmaker.pl.model.entity;
 
 
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
 import javax.persistence.Table;
 
 @Entity

@@ -1,14 +1,7 @@
 package com.mybookmaker.pl.model.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
 import javax.persistence.*;
-
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
-import org.hibernate.annotations.Proxy;
+import java.util.Set;
 
 @Entity
 @Table

@@ -1,14 +1,13 @@
 package com.mybookmaker.pl.repository;
 
-import java.util.List;
-
+import com.mybookmaker.pl.model.dto.GameDto;
+import com.mybookmaker.pl.model.entity.Game;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
-import com.mybookmaker.pl.model.entity.Game;
-import com.mybookmaker.pl.model.dto.GameDto;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface GameRepository extends JpaRepository<Game, Integer>{

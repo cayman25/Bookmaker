@@ -1,13 +1,12 @@
 package com.mybookmaker.pl.services;
 
-import java.util.List;
-
+import com.mybookmaker.pl.converters.DateParser;
+import com.mybookmaker.pl.model.dto.GameDto;
+import com.mybookmaker.pl.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mybookmaker.pl.api.DateValidation;
-import com.mybookmaker.pl.model.dto.GameDto;
-import com.mybookmaker.pl.repository.GameRepository;
+import java.util.List;
 
 @Service
 public class GameServices {
@@ -20,7 +19,7 @@ public class GameServices {
 	}
 	
 	public List<GameDto> getMatchesFromToday(){
-		return gameRepository.getMatchesByDate(DateValidation.getToday());
+		return gameRepository.getMatchesByDate(DateParser.getToday());
 	}
 	
 	public List<GameDto> getAllMatchesFromDate(String date){
