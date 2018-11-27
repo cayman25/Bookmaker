@@ -13,4 +13,8 @@ public interface GameService {
   List<Game> getGamesFromDate(String date);
 
   List<Game> getGamesFromCompetitionAndDate(int competitionId, String date);
+
+  List<Game> getGamesFromTeam(int teamId);
+
+  List<Game> getGamesFromTeamAndDate(int teamId, String date);
 }

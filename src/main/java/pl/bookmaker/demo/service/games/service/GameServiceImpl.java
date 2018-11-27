@@ -34,4 +34,13 @@ public class GameServiceImpl implements GameService {
 		return gameRepository.findByCompetitionCompetitionIDAndDateMatch(competitionId,date);
 	}
 
+	@Override
+	public List<Game> getGamesFromTeam(int teamId) {
+		return gameRepository.findByAwayTeamTeamIdOrHomeTeamTeamId(teamId);
+	}
+
+	@Override
+	public List<Game> getGamesFromTeamAndDate(int teamId, String date) {
+		return gameRepository.findByAwayTeamTeamIdOrHomeTeamTeamIdAndDateMatch(teamId,date);
+	}
 }

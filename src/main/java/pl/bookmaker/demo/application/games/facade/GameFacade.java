@@ -16,5 +16,9 @@ public interface GameFacade {
 
   Set<GameDto> getGamesFromCompetitionAndDate(int competitionId, String date);
 
+  Set<GameDto> getGamesFromTeam(int teamId);
+
   List<Game> findAll();
+
+  Set<GameDto> getGamesFromTeamAndDate(int teamId, String date);
 }

@@ -33,4 +33,17 @@ public interface GameRepository extends JpaRepository<Game, Integer>{
 					"and g.dateMatch=:date")
 	List<Game> findByCompetitionCompetitionIDAndDateMatch(@Param("competition") int competition, @Param("date") String date);
 
+	@Query("Select g from Game g " +
+			"join fetch g.competition " +
+			"join fetch g.awayTeam " +
+			"join fetch g.homeTeam " +
+			"where g.awayTeam=:teamId or g.homeTeam=:teamId")
+    List<Game> findByAwayTeamTeamIdOrHomeTeamTeamId (int teamId);
+
+	@Query("Select g from Game g " +
+			"join fetch g.competition " +
+			"join fetch g.awayTeam " +
+			"join fetch g.homeTeam " +
+			"where g.awayTeam=:teamId or g.homeTeam=:teamId and g.dateMatch=:date")
+    List<Game> findByAwayTeamTeamIdOrHomeTeamTeamIdAndDateMatch (int teamId, String date);
 }

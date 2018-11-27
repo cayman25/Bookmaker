@@ -35,13 +35,23 @@ public class GameRest {
 	}
 
 	@RequestMapping(value="/matches" , params={"competition","date"}, method = RequestMethod.GET)
-	public Set<GameDto> getAllMatchesByCompetitionAndDate(@RequestParam(value="date")String date,
-																												 @RequestParam(value="competition")int competition){
+	public Set<GameDto> getAllMatchesByCompetitionAndDate(@RequestParam(value="date")String date, @RequestParam(value="competition")int competition){
 		return gameFacade.getGamesFromCompetitionAndDate(competition,date);
+	}
+
+	@RequestMapping(value="/matches" , params={"team"}, method = RequestMethod.GET)
+	public Set<GameDto> getAllMatchesByTeam(@RequestParam(value="teamId")int teamId){
+		return gameFacade.getGamesFromTeam(teamId);
+	}
+
+	@RequestMapping(value="/matches" , params={"team"}, method = RequestMethod.GET)
+	public Set<GameDto> getAllMatchesByTeamAndDate(@RequestParam(value="teamId")int teamId, @RequestParam(value="date")String date){
+		return gameFacade.getGamesFromTeamAndDate(teamId,date);
 	}
 
 	@RequestMapping(value="/all", method = RequestMethod.GET)
 	public List<Game> findAll(){
 		 return gameFacade.findAll();
 	}
+
 }

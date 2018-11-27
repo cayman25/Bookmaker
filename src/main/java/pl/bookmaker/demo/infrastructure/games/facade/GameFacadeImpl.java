@@ -48,4 +48,16 @@ public class GameFacadeImpl implements GameFacade {
   public List<Game> findAll(){
     return gameRepository.findAll();
   }
+
+  @Override
+  public Set<GameDto> getGamesFromTeam(int teamId) {
+    List<Game> games = gameService.getGamesFromTeam(teamId);
+    return gameMapper.mapToGameDto(games);
+  }
+
+  @Override
+  public Set<GameDto> getGamesFromTeamAndDate(int teamId, String date) {
+    List<Game> games = gameService.getGamesFromTeamAndDate(teamId,date);
+    return gameMapper.mapToGameDto(games);
+  }
 }
