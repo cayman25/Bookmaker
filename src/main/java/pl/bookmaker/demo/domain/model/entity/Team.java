@@ -1,20 +1,25 @@
 package pl.bookmaker.demo.domain.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
 @Table
+@Getter
+@Setter
 public class Team {
 	
 	@Id
 	private int teamId;
 	private String teamName;
 
+	@OneToMany(mappedBy = "awayTeam")
+	private List<Game> gamesLikeAway;
+
+	@OneToMany(mappedBy = "homeTeam")
+	private List<Game> gamesLikeHome;
 }

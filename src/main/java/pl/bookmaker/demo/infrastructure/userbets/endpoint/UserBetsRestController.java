@@ -1,43 +1,35 @@
-/*
-package pl.bookmaker.demo.infrastructure.games.userbets;
+package pl.bookmaker.demo.infrastructure.userbets.endpoint;
 
-import UserBetsDTO;
-import UserBets;
-import pl.bookmaker.demo.services.UserBetsServices;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import pl.bookmaker.demo.domain.model.dto.UserBetsDto;
+import pl.bookmaker.demo.domain.model.dto.UserBetsDtoRegister;
+import pl.bookmaker.demo.infrastructure.userbets.interfaces.UserBetsFacade;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/user")
+@AllArgsConstructor
+@RequestMapping("/api")
 public class UserBetsRestController {
 	
-	private final UserBetsServices userBetsServices;
+	private final UserBetsFacade userBetsFacade;
 
-	@Autowired
-	public UserBetsRestController (UserBetsServices userBetsServices){
-		this.userBetsServices=userBetsServices;
+	@RequestMapping(value="/matches" , method = RequestMethod.PUT)
+	public UserBetsDto saveOneUserBet(@RequestBody UserBetsDtoRegister bet) {
+		return userBetsFacade.registerBet(bet);
 	}
 
-	@PostMapping(value="/matches")
-	public void saveOneUserBet(
-								@RequestBody List<UserBets> bets) {
-*/
-/*			bets.forEach(bet ->{
-				if(bet.getMatchID().getDateMatch().equals(DateValidation.getToday()) & bet.getMatchID().getStartTime()){
-
-
-				}
-			});*//*
-
-		userBetsServices.saveListOfUserBets(bets);
+	@RequestMapping(value="/matches" , method = RequestMethod.POST)
+	public UserBetsDto postOneUserBet(@RequestBody UserBetsDtoRegister bet) {
+		return userBetsFacade.registerBet(bet);
 	}
-	
-	@GetMapping(value="/bets", params= "user")
-	public List <UserBetsDTO> getUserBets(
+
+/*	@GetMapping(value="/bets", params= "user")
+	public List<UserBetsDto> getUserBets(
 								@RequestParam(value="user")int userID){
 		return userBetsServices.getBetsOfUser(userID);
-	}
+	}*/
+
 }
-*/
+

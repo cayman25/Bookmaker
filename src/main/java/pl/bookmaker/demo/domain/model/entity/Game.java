@@ -1,9 +1,6 @@
 package pl.bookmaker.demo.domain.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -13,7 +10,7 @@ import java.util.Set;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Game {
 
 	@Id
@@ -29,7 +26,7 @@ public class Game {
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
 	private Team awayTeam;
 	private String winner;
-	@OneToMany(mappedBy = "matchID")
+	@OneToMany(mappedBy = "game")
 	private Set<UserBets> listBets;
 	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private boolean verifiedStatus;

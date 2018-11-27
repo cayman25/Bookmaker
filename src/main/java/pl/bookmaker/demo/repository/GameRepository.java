@@ -1,8 +1,8 @@
 package pl.bookmaker.demo.repository;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import pl.bookmaker.demo.domain.model.entity.Game;
 
@@ -11,12 +11,26 @@ import java.util.List;
 @Repository
 public interface GameRepository extends JpaRepository<Game, Integer>{
 
-	List<Game> findByCompetitionCompetitionID(int competitionId);
+	@Query("Select g from Game g " +
+					"join fetch g.competition " +
+					"join fetch g.awayTeam " +
+					"join fetch g.homeTeam " +
+					"where competition=:competition")
+	List<Game> findByCompetitionCompetitionID(@Param("competition") int competition);
 
-	List<Game> findByDateMatch(String today);
+	@Query("Select g from Game g " +
+					"join fetch g.competition " +
+					"join fetch g.awayTeam " +
+					"join fetch g.homeTeam " +
+					"where g.dateMatch=:date")
+	List<Game> findByDateMatch(@Param("date") String date);
 
-	List<Game> findByCompetitionCompetitionIDAndDateMatch(int competitionId, String date);
+	@Query("Select g from Game g " +
+					"join fetch g.competition " +
+					"join fetch g.awayTeam " +
+					"join fetch g.homeTeam " +
+					"where competition=:competition " +
+					"and g.dateMatch=:date")
+	List<Game> findByCompetitionCompetitionIDAndDateMatch(@Param("competition") int competition, @Param("date") String date);
 
-	@Override
-	Page<Game> findAll(Pageable pageable);
 }

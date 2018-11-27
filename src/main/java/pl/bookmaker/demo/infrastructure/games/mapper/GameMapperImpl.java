@@ -19,7 +19,7 @@ public class GameMapperImpl implements GameMapper {
     return games.stream().map(game ->(
             new GameDto(
                     game.getMatchID(),
-                    game.getCompetition().getCompetitionId(),
+                    game.getCompetition().getCompetitionID(),
                     game.getHomeTeam().getTeamName(),
                     game.getAwayTeam().getTeamName(),
                     game.getDateMatch(),

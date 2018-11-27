@@ -1,14 +1,15 @@
 package pl.bookmaker.demo.domain.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter
+@Setter
 @Entity
 @Table
 public class Competition {
