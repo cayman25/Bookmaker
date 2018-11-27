@@ -1,6 +1,6 @@
 package pl.bookmaker.demo.infrastructure.games.interfaces;
 
-import pl.bookmaker.demo.domain.model.dto.GameDto;
+import pl.bookmaker.demo.application.games.dto.GameDto;
 import pl.bookmaker.demo.domain.model.entity.Game;
 
 import java.util.List;

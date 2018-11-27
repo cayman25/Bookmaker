@@ -1,4 +1,4 @@
-package pl.bookmaker.demo.domain.model.dto;
+package pl.bookmaker.demo.application.userBets.dto;
 
 import lombok.Data;
 import pl.bookmaker.demo.domain.model.entity.Game;

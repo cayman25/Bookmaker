@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pl.bookmaker.demo.infrastructure.games.interfaces.GameFacade;
-import pl.bookmaker.demo.domain.model.dto.GameDto;
+import pl.bookmaker.demo.application.games.dto.GameDto;
+import pl.bookmaker.demo.application.games.facade.GameFacade;
 import pl.bookmaker.demo.domain.model.entity.Game;
 
 import java.util.List;

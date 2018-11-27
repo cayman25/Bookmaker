@@ -1,7 +1,9 @@
 package pl.bookmaker.demo.infrastructure.userbets.mapper;
 
 import org.springframework.stereotype.Component;
-import pl.bookmaker.demo.domain.model.dto.UserBetsDto;
+import pl.bookmaker.demo.application.userBets.dto.UserBetsDto;
+import pl.bookmaker.demo.application.userBets.dto.UserBetsDtoRegister;
+import pl.bookmaker.demo.converters.DateParser;
 import pl.bookmaker.demo.domain.model.entity.UserBets;
 import pl.bookmaker.demo.infrastructure.userbets.interfaces.UserBetsMapper;
 
@@ -17,9 +19,15 @@ public class UserBetsMapperImpl implements UserBetsMapper {
               bet.getUser().getUserId(),
               bet.getGame().getMatchID(),
               bet.getUserBet().toString(),
-              bet.getDateOfBet()
+              DateParser.getTodayWithTime()
               );
   }
 
-
+  @Override
+  public void updateUserBets(UserBetsDtoRegister bet, UserBets userBets) {
+    if(bet !=null) {
+      userBets.setDateOfBet(DateParser.getTodayWithTime());
+      userBets.setUserBet(bet.getUserBet());
+    }
+  }
 }

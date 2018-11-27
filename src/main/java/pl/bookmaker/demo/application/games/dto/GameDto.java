@@ -1,4 +1,4 @@
-package pl.bookmaker.demo.domain.model.dto;
+package pl.bookmaker.demo.application.games.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

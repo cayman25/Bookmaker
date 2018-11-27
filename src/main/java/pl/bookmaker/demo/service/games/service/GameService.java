@@ -1,4 +1,4 @@
-package pl.bookmaker.demo.infrastructure.games.interfaces;
+package pl.bookmaker.demo.service.games.service;
 
 import pl.bookmaker.demo.domain.model.entity.Game;
 
