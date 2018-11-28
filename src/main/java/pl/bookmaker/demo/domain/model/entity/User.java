@@ -18,8 +18,6 @@ import java.util.List;
 @EqualsAndHashCode(of = "userId")
 public class User {
 
-    @OneToMany(mappedBy = "user")
-    List<UserBets> userBets;
     @Id
     private int userId;
     private String password;
@@ -27,5 +25,8 @@ public class User {
     private String email;
     private String firstName;
     private String lastName;
+    @OneToMany(mappedBy = "user")
+    List<UserBets> userBets;
+
 }
 
