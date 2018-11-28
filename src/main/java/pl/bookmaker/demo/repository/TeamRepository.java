@@ -7,5 +7,5 @@ import pl.bookmaker.demo.domain.model.entity.Team;
 
 @Repository
 public interface TeamRepository extends JpaRepository<Team, Integer> {
-	
+
 }

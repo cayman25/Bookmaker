@@ -11,9 +11,9 @@ import lombok.Data;
 @Data
 public class UserBetsDto {
 
-  private int userId;
-  private int matchId;
-  private String userBet;
-  private String dateOfBet;
+    private int userId;
+    private int matchId;
+    private String userBet;
+    private String dateOfBet;
 
 }

@@ -18,15 +18,14 @@ import java.util.List;
 @EqualsAndHashCode(of = "userId")
 public class User {
 
-  @Id
-  private int userId;
-  private String password;
-  @Email
-  private String email;
-  private String firstName;
-  private String lastName;
-
-  @OneToMany(mappedBy = "user")
-  List<UserBets> userBets;
+    @OneToMany(mappedBy = "user")
+    List<UserBets> userBets;
+    @Id
+    private int userId;
+    private String password;
+    @Email
+    private String email;
+    private String firstName;
+    private String lastName;
 }
 

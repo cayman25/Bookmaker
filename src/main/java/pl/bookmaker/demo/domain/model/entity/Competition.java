@@ -14,9 +14,9 @@ import java.util.Set;
 @Table
 public class Competition {
 
-	@Id
-	private int competitionID;
-	private String competitionName;
-	@OneToMany(mappedBy = "competition", fetch = FetchType.LAZY)
-	private Set<Game> games = new HashSet<>();
+    @Id
+    private int competitionID;
+    private String competitionName;
+    @OneToMany(mappedBy = "competition", fetch = FetchType.LAZY)
+    private Set<Game> games = new HashSet<>();
 }

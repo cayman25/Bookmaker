@@ -9,11 +9,11 @@ import pl.bookmaker.demo.repository.UserBetsRepository;
 @Service
 @AllArgsConstructor
 public class UserBetsServiceImpl implements UserBetsService {
-	
-	private final UserBetsRepository userBetsRepository;
 
-	@Override
-	public UserBets getUserBetsByMatchIdAndUserId(UserBetsDtoRegister bet) {
-		return userBetsRepository.findByUserUserIdAndGameMatchID(bet.getUserId().getUserId(),bet.getMatchId().getMatchID());
-	}
+    private final UserBetsRepository userBetsRepository;
+
+    @Override
+    public UserBets getUserBetsByMatchIdAndUserId(UserBetsDtoRegister bet) {
+        return userBetsRepository.findByUserUserIdAndGameMatchID(bet.getUserId().getUserId(), bet.getMatchId().getMatchID());
+    }
 }

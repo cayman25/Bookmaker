@@ -9,12 +9,12 @@ import lombok.Setter;
 @Setter
 public class GameDto {
 
-	private int id;
-	private int competitionID;
-	private String homeName;
-	private String awayName;
-	private String date;
-	private String startTime;
-	private String status;
-	private String score;
+    private int id;
+    private int competitionID;
+    private String homeName;
+    private String awayName;
+    private String date;
+    private String startTime;
+    private String status;
+    private String score;
 }

@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface UserBetsFacade {
 
-  UserBetsDto registerBet(UserBetsDtoRegister bet);
+    UserBetsDto registerBet(UserBetsDtoRegister bet);
 
-  UserBetsDto updateBet(UserBetsDtoRegister bet);
+    UserBetsDto updateBet(UserBetsDtoRegister bet);
 
-  List<UserBetsDto> registerBets(List<UserBetsDtoRegister> bets);
+    List<UserBetsDto> registerBets(List<UserBetsDtoRegister> bets);
 }

@@ -8,6 +8,6 @@ import java.util.Set;
 
 public interface GameMapper {
 
-  Set<GameDto> mapToGameDto(List<Game> games);
+    Set<GameDto> mapToGameDto(List<Game> games);
 
 }

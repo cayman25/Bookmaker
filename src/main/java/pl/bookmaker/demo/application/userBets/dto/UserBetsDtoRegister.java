@@ -8,9 +8,9 @@ import pl.bookmaker.demo.domain.model.enums.TypeBet;
 @Data
 public class UserBetsDtoRegister {
 
-	private User userId;
-	private Game matchId;
-	private TypeBet userBet;
-	private String dateOfBet;
+    private User userId;
+    private Game matchId;
+    private TypeBet userBet;
+    private String dateOfBet;
 
 }

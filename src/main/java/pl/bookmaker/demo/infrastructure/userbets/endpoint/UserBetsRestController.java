@@ -15,22 +15,22 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/api")
 public class UserBetsRestController {
-	
-	private final UserBetsFacade userBetsFacade;
 
-	@RequestMapping(value="/matches" , method = RequestMethod.POST)
-	public UserBetsDto postUserBet(@RequestBody UserBetsDtoRegister bet) {
-		return userBetsFacade.registerBet(bet);
-	}
+    private final UserBetsFacade userBetsFacade;
 
-	@RequestMapping(value="/matches" , method = RequestMethod.PUT)
-	public UserBetsDto putUserBet(@RequestBody UserBetsDtoRegister bet) {
-		return userBetsFacade.updateBet(bet);
-	}
+    @RequestMapping(value = "/matches", method = RequestMethod.POST)
+    public UserBetsDto postUserBet(@RequestBody UserBetsDtoRegister bet) {
+        return userBetsFacade.registerBet(bet);
+    }
 
-	@RequestMapping(value="/matches/list" , method = RequestMethod.POST)
-	public List<UserBetsDto> postUserBets(@RequestBody List<UserBetsDtoRegister> bets){
-		return userBetsFacade.registerBets(bets);
-	}
+    @RequestMapping(value = "/matches", method = RequestMethod.PUT)
+    public UserBetsDto putUserBet(@RequestBody UserBetsDtoRegister bet) {
+        return userBetsFacade.updateBet(bet);
+    }
+
+    @RequestMapping(value = "/matches/list", method = RequestMethod.POST)
+    public List<UserBetsDto> postUserBets(@RequestBody List<UserBetsDtoRegister> bets) {
+        return userBetsFacade.registerBets(bets);
+    }
 }
 

@@ -6,15 +6,15 @@ import java.util.List;
 
 public interface GameService {
 
-  List<Game> getGamesFromCompetition(int competitionId);
+    List<Game> getGamesFromCompetition(int competitionId);
 
-  List<Game> getGamesFromToday();
+    List<Game> getGamesFromToday();
 
-  List<Game> getGamesFromDate(String date);
+    List<Game> getGamesFromDate(String date);
 
-  List<Game> getGamesFromCompetitionAndDate(int competitionId, String date);
+    List<Game> getGamesFromCompetitionAndDate(int competitionId, String date);
 
-  List<Game> getGamesFromTeam(int teamId);
+    List<Game> getGamesFromTeam(int teamId);
 
-  List<Game> getGamesFromTeamAndDate(int teamId, String date);
+    List<Game> getGamesFromTeamAndDate(int teamId, String date);
 }

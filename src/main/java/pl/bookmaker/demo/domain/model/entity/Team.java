@@ -15,14 +15,14 @@ import java.util.List;
 @Entity
 @Table
 public class Team {
-	
-	@Id
-	private int teamId;
-	private String teamName;
 
-	@OneToMany(mappedBy = "awayTeam")
-	private List<Game> gamesLikeAway;
+    @Id
+    private int teamId;
+    private String teamName;
 
-	@OneToMany(mappedBy = "homeTeam")
-	private List<Game> gamesLikeHome;
+    @OneToMany(mappedBy = "awayTeam")
+    private List<Game> gamesLikeAway;
+
+    @OneToMany(mappedBy = "homeTeam")
+    private List<Game> gamesLikeHome;
 }

@@ -17,41 +17,41 @@ import java.util.Set;
 @RequestMapping("/api")
 public class GameRest {
 
-	private final GameFacade gameFacade;
+    private final GameFacade gameFacade;
 
-	@RequestMapping(value="/matches" , params={"competition"}, method=RequestMethod.GET)
-	public Set<GameDto> getAllMatchesByDate(@RequestParam(value="competition") int competition) {
-		return gameFacade.getGamesByCompetitionId(competition);
-	}
+    @RequestMapping(value = "/matches", params = {"competition"}, method = RequestMethod.GET)
+    public Set<GameDto> getAllMatchesByDate(@RequestParam(value = "competition") int competition) {
+        return gameFacade.getGamesByCompetitionId(competition);
+    }
 
-	@RequestMapping(value = "/matches", method = RequestMethod.GET)
-	public Set<GameDto> getAllMatchesFromToday(){
-		return gameFacade.getGamesFromToday();
-	}
+    @RequestMapping(value = "/matches", method = RequestMethod.GET)
+    public Set<GameDto> getAllMatchesFromToday() {
+        return gameFacade.getGamesFromToday();
+    }
 
-	@RequestMapping(value="/matches" , params={"date"})
-	public Set<GameDto> getAllMatchesByDate(@RequestParam(value="date") String date){
-		return gameFacade.getGamesFromDate(date);
-	}
+    @RequestMapping(value = "/matches", params = {"date"})
+    public Set<GameDto> getAllMatchesByDate(@RequestParam(value = "date") String date) {
+        return gameFacade.getGamesFromDate(date);
+    }
 
-	@RequestMapping(value="/matches" , params={"competition","date"}, method = RequestMethod.GET)
-	public Set<GameDto> getAllMatchesByCompetitionAndDate(@RequestParam(value="date")String date, @RequestParam(value="competition")int competition){
-		return gameFacade.getGamesFromCompetitionAndDate(competition,date);
-	}
+    @RequestMapping(value = "/matches", params = {"competition", "date"}, method = RequestMethod.GET)
+    public Set<GameDto> getAllMatchesByCompetitionAndDate(@RequestParam(value = "date") String date, @RequestParam(value = "competition") int competition) {
+        return gameFacade.getGamesFromCompetitionAndDate(competition, date);
+    }
 
-	@RequestMapping(value="/matches" , params={"team"}, method = RequestMethod.GET)
-	public Set<GameDto> getAllMatchesByTeam(@RequestParam(value="team")int team){
-		return gameFacade.getGamesFromTeam(team);
-	}
+    @RequestMapping(value = "/matches", params = {"team"}, method = RequestMethod.GET)
+    public Set<GameDto> getAllMatchesByTeam(@RequestParam(value = "team") int team) {
+        return gameFacade.getGamesFromTeam(team);
+    }
 
-	@RequestMapping(value="/matches" , params={"team","date"}, method = RequestMethod.GET)
-	public Set<GameDto> getAllMatchesByTeamAndDate(@RequestParam(value="team")int team, @RequestParam(value="date")String date){
-		return gameFacade.getGamesFromTeamAndDate(team,date);
-	}
+    @RequestMapping(value = "/matches", params = {"team", "date"}, method = RequestMethod.GET)
+    public Set<GameDto> getAllMatchesByTeamAndDate(@RequestParam(value = "team") int team, @RequestParam(value = "date") String date) {
+        return gameFacade.getGamesFromTeamAndDate(team, date);
+    }
 
-	@RequestMapping(value="/all", method = RequestMethod.GET)
-	public List<Game> findAll(){
-		 return gameFacade.findAll();
-	}
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    public List<Game> findAll() {
+        return gameFacade.findAll();
+    }
 
 }

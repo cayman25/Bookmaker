@@ -7,5 +7,6 @@ import pl.bookmaker.demo.domain.model.entity.UserBets;
 public interface UserBetsMapper {
 
     public UserBetsDto mapToUserBets(UserBets bet);
+
     public void updateUserBets(UserBetsDtoRegister bet, UserBets userBets);
 }

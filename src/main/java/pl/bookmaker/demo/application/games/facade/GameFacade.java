@@ -8,17 +8,17 @@ import java.util.Set;
 
 public interface GameFacade {
 
-  Set<GameDto> getGamesByCompetitionId(int competitionId);
+    Set<GameDto> getGamesByCompetitionId(int competitionId);
 
-  Set<GameDto> getGamesFromToday();
+    Set<GameDto> getGamesFromToday();
 
-  Set<GameDto> getGamesFromDate(String date);
+    Set<GameDto> getGamesFromDate(String date);
 
-  Set<GameDto> getGamesFromCompetitionAndDate(int competitionId, String date);
+    Set<GameDto> getGamesFromCompetitionAndDate(int competitionId, String date);
 
-  Set<GameDto> getGamesFromTeam(int teamId);
+    Set<GameDto> getGamesFromTeam(int teamId);
 
-  List<Game> findAll();
+    List<Game> findAll();
 
-  Set<GameDto> getGamesFromTeamAndDate(int teamId, String date);
+    Set<GameDto> getGamesFromTeamAndDate(int teamId, String date);
 }
