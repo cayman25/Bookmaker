@@ -1,4 +1,4 @@
-package pl.bookmaker.demo.domain.model.entity;
+package pl.bookmaker.demo.domain.model.entity.game;
 
 import lombok.*;
 

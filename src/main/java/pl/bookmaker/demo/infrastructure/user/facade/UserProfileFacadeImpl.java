@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.bookmaker.demo.application.user.dto.UpdateUserProfileRequest;
 import pl.bookmaker.demo.application.user.dto.UserResponse;
 import pl.bookmaker.demo.application.user.facade.UserProfileFacade;
-import pl.bookmaker.demo.domain.model.entity.User;
+import pl.bookmaker.demo.domain.model.entity.user.User;
 import pl.bookmaker.demo.infrastructure.user.interfaces.UserMapper;
 import pl.bookmaker.demo.repository.UserRepository;
 import pl.bookmaker.demo.service.user.service.UserService;

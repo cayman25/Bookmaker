@@ -2,7 +2,7 @@ package pl.bookmaker.demo.infrastructure.games.mapper;
 
 import org.springframework.stereotype.Component;
 import pl.bookmaker.demo.application.games.dto.GameDto;
-import pl.bookmaker.demo.domain.model.entity.Game;
+import pl.bookmaker.demo.domain.model.entity.game.Game;
 import pl.bookmaker.demo.infrastructure.games.interfaces.GameMapper;
 
 import java.util.List;
