@@ -1,9 +1,8 @@
 package pl.bookmaker.demo.infrastructure.user.endpoint;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import pl.bookmaker.demo.application.user.dto.UpdateUserProfileRequest;
 import pl.bookmaker.demo.application.user.dto.UserResponse;
 import pl.bookmaker.demo.application.user.facade.UserProfileFacade;
 
@@ -15,8 +14,12 @@ public class UserProfileRestController {
     private final UserProfileFacade userProfileFacade;
 
     @RequestMapping(path = "/user/profile", method = RequestMethod.GET)
-    public UserResponse getUserProfile() {
-        return userProfileFacade.getUserProfile(account.getId());
+    public UserResponse getUserProfile(@RequestParam(value="userId") int userId) {
+        return userProfileFacade.getUserProfile(userId);
     }
 
+    @RequestMapping(path = "/user/profile", method = RequestMethod.PUT)
+    public UserResponse updateUserProfile(@RequestParam(value="userId") int userId, @RequestBody UpdateUserProfileRequest request) {
+        return userProfileFacade.updateUserProfile(userId, request);
+    }
 }

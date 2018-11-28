@@ -48,10 +48,4 @@ public class GameRest {
 	public Set<GameDto> getAllMatchesByTeamAndDate(@RequestParam(value="team")int team, @RequestParam(value="date")String date){
 		return gameFacade.getGamesFromTeamAndDate(team,date);
 	}
-
-	@RequestMapping(value="/all", method = RequestMethod.GET)
-	public List<Game> findAll(){
-		 return gameFacade.findAll();
-	}
-
 }
