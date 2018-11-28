@@ -28,10 +28,11 @@ public class UserBetsRestController {
 		return userBetsFacade.updateBet(bet);
 	}
 
-	@RequestMapping(value="/matches" , method = RequestMethod.POST)
+	@RequestMapping(value="/matches/few" , method = RequestMethod.POST)
 	public List<UserBetsDto> postUserBets(@RequestBody List<UserBetsDtoRegister> bets){
 		return userBetsFacade.registerBets(bets);
 	}
+
 
 /*
 	@RequestMapping(value="/matches" , method = RequestMethod.POST)
