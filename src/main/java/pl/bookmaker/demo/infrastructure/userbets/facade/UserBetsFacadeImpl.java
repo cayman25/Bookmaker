@@ -35,6 +35,7 @@ public class UserBetsFacadeImpl implements UserBetsFacade {
   public UserBetsDto updateBet(UserBetsDtoRegister bet) {
     UserBets userBets = userBetsService.getUserBetsByMatchIdAndUserId(bet);
     userBetsMapper.updateUserBets(bet,userBets);
+    userBetsRepository.save(userBets);
     return userBetsMapper.mapToUserBets(userBets);
   }
 
@@ -44,5 +45,4 @@ public class UserBetsFacadeImpl implements UserBetsFacade {
     userBetsRepository.saveAll(userBets);
     return userBets.stream().map(bet -> userBetsMapper.mapToUserBets(bet)).collect(Collectors.toList());
   }
-
 }

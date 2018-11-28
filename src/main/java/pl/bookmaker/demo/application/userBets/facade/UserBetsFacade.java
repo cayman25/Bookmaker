@@ -12,5 +12,4 @@ public interface UserBetsFacade {
   UserBetsDto updateBet(UserBetsDtoRegister bet);
 
   List<UserBetsDto> registerBets(List<UserBetsDtoRegister> bets);
-
 }

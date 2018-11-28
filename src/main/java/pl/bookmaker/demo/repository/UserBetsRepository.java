@@ -8,5 +8,5 @@ import pl.bookmaker.demo.domain.model.entity.UserBets;
 @Repository
 public interface UserBetsRepository extends JpaRepository<UserBets, Integer>{
 
-    public UserBets findByUserUserIdAndGame_MatchID(int userId, int matchId);
+    UserBets findByUserUserIdAndGameMatchID(int userId, int matchId);
 }

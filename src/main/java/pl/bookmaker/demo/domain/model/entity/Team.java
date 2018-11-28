@@ -10,10 +10,10 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-@Entity
-@Table
 @Getter
 @Setter
+@Entity
+@Table
 public class Team {
 	
 	@Id

@@ -1,4 +1,4 @@
-package pl.bookmaker.demo.converters;
+package pl.bookmaker.demo.application.converters;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -21,7 +21,7 @@ public class DateParser {
 		return formatter.format(currentTime);
 	}
 
-	public static String getTodayWithAddOrSubstractionOfDay(int numberOfDay) {
+	public static String getTodayWithAddOrSubtractionOfDay(int numberOfDay) {
 		LocalDate currentDate = LocalDate.now();
 		return currentDate.plusDays(numberOfDay).toString();
 	}

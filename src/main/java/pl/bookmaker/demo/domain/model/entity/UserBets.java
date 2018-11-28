@@ -6,12 +6,12 @@ import pl.bookmaker.demo.domain.model.enums.TypeScore;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 @Setter
 @Entity
 @Table
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
-@AllArgsConstructor
 @Builder
 public class UserBets {
 

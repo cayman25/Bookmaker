@@ -19,33 +19,18 @@ public class UserBetsRestController {
 	private final UserBetsFacade userBetsFacade;
 
 	@RequestMapping(value="/matches" , method = RequestMethod.POST)
-	public UserBetsDto postOneUserBet(@RequestBody UserBetsDtoRegister bet) {
+	public UserBetsDto postUserBet(@RequestBody UserBetsDtoRegister bet) {
 		return userBetsFacade.registerBet(bet);
 	}
 
 	@RequestMapping(value="/matches" , method = RequestMethod.PUT)
-	public UserBetsDto putOneUserBet(@RequestBody UserBetsDtoRegister bet) {
+	public UserBetsDto putUserBet(@RequestBody UserBetsDtoRegister bet) {
 		return userBetsFacade.updateBet(bet);
 	}
 
-	@RequestMapping(value="/matches/few" , method = RequestMethod.POST)
+	@RequestMapping(value="/matches/list" , method = RequestMethod.POST)
 	public List<UserBetsDto> postUserBets(@RequestBody List<UserBetsDtoRegister> bets){
 		return userBetsFacade.registerBets(bets);
 	}
-
-
-/*
-	@RequestMapping(value="/matches" , method = RequestMethod.POST)
-	public List<UserBetsDto> putUserBets(@RequestBody List<UserBetsDtoRegister> bets){
-		return userBetsFacade.updateBets(bets);
-*/
-
-
-/*	@GetMapping(value="/bets", params= "user")
-	public List<UserBetsDto> getUserBets(
-								@RequestParam(value="user")int userID){
-		return userBetsServices.getBetsOfUser(userID);
-	}*/
-
 }
 
