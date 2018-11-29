@@ -1,10 +1,10 @@
 package pl.bookmaker.demo.infrastructure.userbets.mapper;
 
 import org.springframework.stereotype.Component;
+import pl.bookmaker.demo.application.converters.DateParser;
 import pl.bookmaker.demo.application.userBets.dto.UserBetsDto;
 import pl.bookmaker.demo.application.userBets.dto.UserBetsDtoRegister;
-import pl.bookmaker.demo.application.converters.DateParser;
-import pl.bookmaker.demo.domain.model.entity.UserBets;
+import pl.bookmaker.demo.domain.model.entity.bets.UserBets;
 import pl.bookmaker.demo.infrastructure.userbets.interfaces.UserBetsMapper;
 
 @Component
@@ -30,4 +30,6 @@ public class UserBetsMapperImpl implements UserBetsMapper {
       userBets.setUserBet(bet.getUserBet());
     }
   }
+
+
 }

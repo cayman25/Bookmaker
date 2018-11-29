@@ -5,14 +5,13 @@ import org.springframework.stereotype.Service;
 import pl.bookmaker.demo.application.userBets.dto.UserBetsDto;
 import pl.bookmaker.demo.application.userBets.dto.UserBetsDtoRegister;
 import pl.bookmaker.demo.application.userBets.facade.UserBetsFacade;
-import pl.bookmaker.demo.domain.model.entity.UserBets;
+import pl.bookmaker.demo.domain.model.entity.bets.UserBets;
 import pl.bookmaker.demo.infrastructure.userbets.factory.UserBetsFactory;
 import pl.bookmaker.demo.infrastructure.userbets.interfaces.UserBetsMapper;
 import pl.bookmaker.demo.repository.UserBetsRepository;
 import pl.bookmaker.demo.service.userbets.service.UserBetsService;
 
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor

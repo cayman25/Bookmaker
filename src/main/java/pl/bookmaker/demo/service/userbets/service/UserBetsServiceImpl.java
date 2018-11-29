@@ -3,11 +3,7 @@ package pl.bookmaker.demo.service.userbets.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.bookmaker.demo.application.userBets.dto.UserBetsDtoRegister;
-<<<<<<< HEAD
 import pl.bookmaker.demo.domain.model.entity.bets.UserBets;
-=======
-import pl.bookmaker.demo.domain.model.entity.UserBets;
->>>>>>> parent of 0485692... changed infrastructure
 import pl.bookmaker.demo.repository.UserBetsRepository;
 
 @Service

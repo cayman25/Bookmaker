@@ -2,7 +2,7 @@ package pl.bookmaker.demo.infrastructure.user.interfaces;
 
 import pl.bookmaker.demo.application.user.dto.UpdateUserProfileRequest;
 import pl.bookmaker.demo.application.user.dto.UserResponse;
-import pl.bookmaker.demo.domain.model.entity.User;
+import pl.bookmaker.demo.domain.model.entity.user.User;
 
 public interface UserMapper {
 

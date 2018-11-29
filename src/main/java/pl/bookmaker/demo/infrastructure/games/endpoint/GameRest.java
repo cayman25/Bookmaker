@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pl.bookmaker.demo.application.games.dto.GameDto;
 import pl.bookmaker.demo.application.games.facade.GameFacade;
-import pl.bookmaker.demo.domain.model.entity.Game;
 
-import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -29,7 +27,7 @@ public class GameRest {
 		return gameFacade.getGamesFromToday();
 	}
 
-	@RequestMapping(value="/matches" , params={"date"})
+	@RequestMapping(value="/matches" , params={"date"}, method = RequestMethod.GET)
 	public Set<GameDto> getAllMatchesByDate(@RequestParam(value="date") String date){
 		return gameFacade.getGamesFromDate(date);
 	}

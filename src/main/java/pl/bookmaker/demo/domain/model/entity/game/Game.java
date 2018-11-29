@@ -1,6 +1,10 @@
-package pl.bookmaker.demo.domain.model.entity;
+package pl.bookmaker.demo.domain.model.entity.game;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import pl.bookmaker.demo.domain.model.entity.bets.UserBets;
 
 import javax.persistence.*;
 import java.util.Set;
