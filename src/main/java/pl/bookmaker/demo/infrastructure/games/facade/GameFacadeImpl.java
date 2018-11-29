@@ -21,14 +21,14 @@ public class GameFacadeImpl implements GameFacade {
     private final GameMapper gameMapper;
 
     @Override
-    public Set<GameDto> getGamesByCompetitionId(int competitionId) {
-        List<Game> games = gameService.getGamesFromCompetition(competitionId);
+    public Set<GameDto> getGamesFromToday() {
+        List<Game> games = gameService.getGamesFromToday();
         return gameMapper.mapToGameDto(games);
     }
 
     @Override
-    public Set<GameDto> getGamesFromToday() {
-        List<Game> games = gameService.getGamesFromToday();
+    public Set<GameDto> getGamesByCompetitionId(int competitionId) {
+        List<Game> games = gameService.getGamesFromCompetition(competitionId);
         return gameMapper.mapToGameDto(games);
     }
 
@@ -42,11 +42,6 @@ public class GameFacadeImpl implements GameFacade {
     public Set<GameDto> getGamesFromCompetitionAndDate(int competitionId, String date) {
         List<Game> games = gameService.getGamesFromCompetitionAndDate(competitionId, date);
         return gameMapper.mapToGameDto(games);
-    }
-
-    @Override
-    public List<Game> findAll() {
-        return gameRepository.findAll();
     }
 
     @Override

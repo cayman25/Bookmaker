@@ -1,8 +1,7 @@
-package pl.bookmaker.demo.domain.model.user;
+package pl.bookmaker.demo.domain.model.bets;
 
 import lombok.*;
-import pl.bookmaker.demo.domain.model.user.enums.TypeBet;
-import pl.bookmaker.demo.domain.model.user.enums.TypeScore;
+import pl.bookmaker.demo.domain.model.user.User;
 import pl.bookmaker.demo.domain.model.game.Game;
 
 import javax.persistence.*;

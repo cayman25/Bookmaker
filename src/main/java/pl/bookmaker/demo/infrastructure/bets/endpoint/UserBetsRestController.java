@@ -1,4 +1,4 @@
-package pl.bookmaker.demo.infrastructure.userbets.endpoint;
+package pl.bookmaker.demo.infrastructure.bets.endpoint;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestBody;

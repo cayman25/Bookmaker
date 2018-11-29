@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pl.bookmaker.demo.domain.model.user.UserBets;
+import pl.bookmaker.demo.domain.model.bets.UserBets;
 
 import javax.persistence.*;
 import java.util.Set;

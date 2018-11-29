@@ -19,14 +19,14 @@ public class GameRest {
 
     private final GameFacade gameFacade;
 
-    @RequestMapping(value = "/matches", params = {"competition"}, method = RequestMethod.GET)
-    public Set<GameDto> getAllMatchesByDate(@RequestParam(value = "competition") int competition) {
-        return gameFacade.getGamesByCompetitionId(competition);
-    }
-
     @RequestMapping(value = "/matches", method = RequestMethod.GET)
     public Set<GameDto> getAllMatchesFromToday() {
         return gameFacade.getGamesFromToday();
+    }
+
+    @RequestMapping(value = "/matches", params = {"competition"}, method = RequestMethod.GET)
+    public Set<GameDto> getAllMatchesByDate(@RequestParam(value = "competition") int competition) {
+        return gameFacade.getGamesByCompetitionId(competition);
     }
 
     @RequestMapping(value = "/matches", params = {"date"})
@@ -48,10 +48,4 @@ public class GameRest {
     public Set<GameDto> getAllMatchesByTeamAndDate(@RequestParam(value = "team") int team, @RequestParam(value = "date") String date) {
         return gameFacade.getGamesFromTeamAndDate(team, date);
     }
-
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
-    public List<Game> findAll() {
-        return gameFacade.findAll();
-    }
-
 }

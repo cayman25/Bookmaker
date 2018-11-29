@@ -3,7 +3,7 @@ package pl.bookmaker.demo.service.userbets.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.bookmaker.demo.application.userBets.dto.UserBetsDtoRegister;
-import pl.bookmaker.demo.domain.model.user.UserBets;
+import pl.bookmaker.demo.domain.model.bets.UserBets;
 import pl.bookmaker.demo.repository.UserBetsRepository;
 
 @Service

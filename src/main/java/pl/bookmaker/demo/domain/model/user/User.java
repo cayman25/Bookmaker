@@ -1,6 +1,7 @@
 package pl.bookmaker.demo.domain.model.user;
 
 import lombok.*;
+import pl.bookmaker.demo.domain.model.bets.UserBets;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

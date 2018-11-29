@@ -1,13 +1,13 @@
-package pl.bookmaker.demo.infrastructure.userbets.facade;
+package pl.bookmaker.demo.infrastructure.bets.facade;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.bookmaker.demo.application.userBets.dto.UserBetsDto;
 import pl.bookmaker.demo.application.userBets.dto.UserBetsDtoRegister;
 import pl.bookmaker.demo.application.userBets.facade.UserBetsFacade;
-import pl.bookmaker.demo.domain.model.user.UserBets;
-import pl.bookmaker.demo.infrastructure.userbets.factory.UserBetsFactory;
-import pl.bookmaker.demo.infrastructure.userbets.interfaces.UserBetsMapper;
+import pl.bookmaker.demo.domain.model.bets.UserBets;
+import pl.bookmaker.demo.infrastructure.bets.factory.UserBetsFactory;
+import pl.bookmaker.demo.infrastructure.bets.interfaces.UserBetsMapper;
 import pl.bookmaker.demo.repository.UserBetsRepository;
 import pl.bookmaker.demo.service.userbets.service.UserBetsService;
 
