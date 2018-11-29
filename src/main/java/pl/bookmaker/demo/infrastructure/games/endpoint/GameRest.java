@@ -29,7 +29,7 @@ public class GameRest {
         return gameFacade.getGamesByCompetitionId(competition);
     }
 
-    @RequestMapping(value = "/matches", params = {"date"})
+    @RequestMapping(value = "/matches", params = {"date"}, method = RequestMethod.GET)
     public Set<GameDto> getAllMatchesByDate(@RequestParam(value = "date") String date) {
         return gameFacade.getGamesFromDate(date);
     }
