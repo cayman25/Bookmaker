@@ -1,6 +1,6 @@
 package pl.bookmaker.demo.service.games.service;
 
-import pl.bookmaker.demo.domain.model.entity.Game;
+import pl.bookmaker.demo.domain.model.game.Game;
 
 import java.util.List;
 

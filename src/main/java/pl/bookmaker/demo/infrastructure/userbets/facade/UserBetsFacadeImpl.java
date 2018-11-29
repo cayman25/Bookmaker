@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.bookmaker.demo.application.userBets.dto.UserBetsDto;
 import pl.bookmaker.demo.application.userBets.dto.UserBetsDtoRegister;
 import pl.bookmaker.demo.application.userBets.facade.UserBetsFacade;
-import pl.bookmaker.demo.domain.model.entity.UserBets;
+import pl.bookmaker.demo.domain.model.user.UserBets;
 import pl.bookmaker.demo.infrastructure.userbets.factory.UserBetsFactory;
 import pl.bookmaker.demo.infrastructure.userbets.interfaces.UserBetsMapper;
 import pl.bookmaker.demo.repository.UserBetsRepository;

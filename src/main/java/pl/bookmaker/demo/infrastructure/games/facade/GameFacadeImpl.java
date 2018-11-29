@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.bookmaker.demo.application.games.dto.GameDto;
 import pl.bookmaker.demo.application.games.facade.GameFacade;
-import pl.bookmaker.demo.domain.model.entity.Game;
+import pl.bookmaker.demo.domain.model.game.Game;
 import pl.bookmaker.demo.infrastructure.games.interfaces.GameMapper;
 import pl.bookmaker.demo.repository.GameRepository;
 import pl.bookmaker.demo.service.games.service.GameService;
