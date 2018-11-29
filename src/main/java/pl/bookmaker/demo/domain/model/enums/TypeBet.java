@@ -1,4 +1,4 @@
-package pl.bookmaker.demo.domain.model.entity.bets.enums;
+package pl.bookmaker.demo.domain.model.enums;
 
 public enum TypeBet {
 	DRAW, 

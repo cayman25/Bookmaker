@@ -1,9 +1,9 @@
 package pl.bookmaker.demo.application.userBets.dto;
 
 import lombok.Data;
-import pl.bookmaker.demo.domain.model.entity.bets.enums.TypeBet;
-import pl.bookmaker.demo.domain.model.entity.game.Game;
-import pl.bookmaker.demo.domain.model.entity.user.User;
+import pl.bookmaker.demo.domain.model.entity.Game;
+import pl.bookmaker.demo.domain.model.entity.User;
+import pl.bookmaker.demo.domain.model.enums.TypeBet;
 
 @Data
 public class UserBetsDtoRegister {

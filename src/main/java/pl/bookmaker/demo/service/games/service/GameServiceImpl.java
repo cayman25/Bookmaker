@@ -3,7 +3,7 @@ package pl.bookmaker.demo.service.games.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.bookmaker.demo.application.converters.DateParser;
-import pl.bookmaker.demo.domain.model.entity.game.Game;
+import pl.bookmaker.demo.domain.model.entity.Game;
 import pl.bookmaker.demo.repository.GameRepository;
 
 import java.util.List;

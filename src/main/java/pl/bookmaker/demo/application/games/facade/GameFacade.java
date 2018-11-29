@@ -1,7 +1,7 @@
 package pl.bookmaker.demo.application.games.facade;
 
 import pl.bookmaker.demo.application.games.dto.GameDto;
-import pl.bookmaker.demo.domain.model.entity.game.Game;
+import pl.bookmaker.demo.domain.model.entity.Game;
 
 import java.util.List;
 import java.util.Set;

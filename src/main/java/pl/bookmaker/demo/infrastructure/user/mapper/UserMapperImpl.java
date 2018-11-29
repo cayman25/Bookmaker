@@ -3,7 +3,7 @@ package pl.bookmaker.demo.infrastructure.user.mapper;
 import org.springframework.stereotype.Component;
 import pl.bookmaker.demo.application.user.dto.UpdateUserProfileRequest;
 import pl.bookmaker.demo.application.user.dto.UserResponse;
-import pl.bookmaker.demo.domain.model.entity.user.User;
+import pl.bookmaker.demo.domain.model.entity.User;
 import pl.bookmaker.demo.infrastructure.user.interfaces.UserMapper;
 
 @Component
