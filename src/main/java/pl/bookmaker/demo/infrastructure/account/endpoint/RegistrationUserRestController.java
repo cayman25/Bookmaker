@@ -11,12 +11,12 @@ import pl.bookmaker.demo.application.user.dto.UserResponse;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(value = "account/register")
+@RequestMapping(value = "/account")
 public class RegistrationUserRestController {
 
     private final UserRegistrationFacade userRegistrationFacade;
 
-    @RequestMapping(path = "/account/register/credentials", method = RequestMethod.POST)
+    @RequestMapping(path = "/register", method = RequestMethod.POST)
     public UserResponse registerUser(@RequestBody RegistrationUsingCredentialsRequest request) {
         return userRegistrationFacade.registerUserUsingCredentials(request);
     }

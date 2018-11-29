@@ -2,6 +2,8 @@ package pl.bookmaker.demo.domain.model.entity.user;
 
 import lombok.*;
 import pl.bookmaker.demo.domain.model.entity.bets.UserBets;
+import pl.bookmaker.demo.domain.model.entity.user.enums.Permission;
+import pl.bookmaker.demo.infrastructure.account.factory.UserFactory;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -28,10 +30,9 @@ public class User {
   private String lastName;
   @JoinColumn(name = "userId")
   @OneToMany(cascade = CascadeType.ALL)
-  private Set<UserPrivilege> privileges = new HashSet<>();
+  private Set<UserPermission> permissions = new HashSet<>();
   @OneToMany(mappedBy = "user")
   List<UserBets> userBets;
-
 
 }
 
