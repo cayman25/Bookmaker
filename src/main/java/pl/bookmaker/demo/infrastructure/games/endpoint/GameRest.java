@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pl.bookmaker.demo.application.games.dto.GameDto;
 import pl.bookmaker.demo.application.games.facade.GameFacade;
-import pl.bookmaker.demo.domain.model.game.Game;
 
-import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
